@@ -6,7 +6,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.WindowConstants;
 
-import data_access.DBUserDataAccessObject;
+import data_access.FileUserDataAccessObject;
 import entity.CommonUserFactory;
 import interface_adapter.ViewManagerModel;
 import interface_adapter.logged_in.LoggedInViewModel;
@@ -53,7 +53,7 @@ public class MainWithDB {
         final SignupViewModel signupViewModel = new SignupViewModel();
 
         // TODO Task 1.1 in a copy of this file, change this line to use the in-memory DAO.
-        final DBUserDataAccessObject userDataAccessObject = new DBUserDataAccessObject(new CommonUserFactory());
+        final FileUserDataAccessObject.DBUserDataAccessObject userDataAccessObject = new FileUserDataAccessObject.DBUserDataAccessObject(new CommonUserFactory());
 
         final SignupView signupView = SignupUseCaseFactory.create(viewManagerModel, loginViewModel,
                                                                   signupViewModel, userDataAccessObject);

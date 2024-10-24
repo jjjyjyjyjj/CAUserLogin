@@ -1,5 +1,11 @@
 package app;
 
+import java.awt.CardLayout;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.WindowConstants;
+
 import data_access.InMemoryUserDataAccessObject;
 import interface_adapter.ViewManagerModel;
 import interface_adapter.logged_in.LoggedInViewModel;
@@ -9,9 +15,6 @@ import view.LoggedInView;
 import view.LoginView;
 import view.SignupView;
 import view.ViewManager;
-
-import javax.swing.*;
-import java.awt.*;
 
 /**
  * The version of Main with an external database used to persist user data.
@@ -62,7 +65,7 @@ public class MainWithInMemory {
         views.add(loggedInView, loggedInView.getViewName());
 
         viewManagerModel.setState(signupView.getViewName());
-        viewManagerModel.firePropertyChanged();;
+        viewManagerModel.firePropertyChanged();
 
         application.pack();
         application.setVisible(true);
